@@ -3,5 +3,5 @@ export const Colors = {
   backgroundLight: '#FDFFFC',
   textPrimaryDark: '#0b090a',
   textPrimaryLight: '#FDFFFC',
-  textAccent: '#2EC4B6',
+  textAccent: '#EB5E28',
 };

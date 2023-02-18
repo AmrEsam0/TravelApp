@@ -5,6 +5,6 @@ export const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
     backgroundColor: Colors.backgroundLight,
-    padding: 12,
+    color: Colors.textPrimaryDark,
   },
 });
