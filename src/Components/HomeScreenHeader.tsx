@@ -1,17 +1,21 @@
 import {View, StyleSheet} from 'react-native';
 import React from 'react';
-import {Colors} from '../Globals/Colors';
 import {Text} from 'react-native-paper';
+import {Colors} from '../Globals/Colors';
 
 export default function HomeScreenHeader() {
   return (
     <View style={styles.container}>
-      <Text variant="displayMedium">Where do you</Text>
-      <Text variant="displayMedium" style={{fontWeight: 'bold'}}>
-        want to go?
+      <Text style={styles.text} variant="displayMedium">
+        Where do <Text style={{color: Colors.textAccent}}>you</Text>
       </Text>
-      <Text variant="bodyLarge" style={styles.subHeader}>
-        Explore Attractions
+
+      <Text style={[styles.text, {fontWeight: 'bold'}]} variant="displayMedium">
+        want to <Text style={{color: Colors.textAccent}}>go</Text>?
+      </Text>
+      <Text style={[styles.text, styles.subHeader]} variant="bodyLarge">
+        <Text style={[{fontWeight: 'bold'}, styles.text]}>Explore</Text>{' '}
+        Attractions
       </Text>
     </View>
   );
@@ -20,6 +24,9 @@ export default function HomeScreenHeader() {
 const styles = StyleSheet.create({
   container: {
     paddingLeft: '2%',
+  },
+  text: {
+    color: Colors.textPrimaryLight,
   },
   subHeader: {
     fontWeight: '200',

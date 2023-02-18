@@ -3,6 +3,8 @@ import {styles} from './Styles';
 import HomeScreenHeader from '../../Components/HomeScreenHeader';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import AttractionFlatList from '../../Components/AttractionFlatList';
+import AttractionCard from '../../Components/AttractionCard';
+import {View} from 'moti';
 
 const HomeScreen = () => {
   const categories = ['All', 'Museums', 'Parks', 'Restaurants'];
@@ -15,6 +17,11 @@ const HomeScreen = () => {
         categories={categories}
         onCategoryPress={setSelectedId}
       />
+      <View style={styles.cardContainer}>
+        <AttractionCard random={200} />
+        <AttractionCard random={200} />
+        <AttractionCard random={200} />
+      </View>
     </SafeAreaView>
   );
 };

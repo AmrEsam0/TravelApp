@@ -7,8 +7,8 @@ import HomeScreen from './src/Screens/Home/Index';
 
 const App = () => {
   return (
-    StatusBar.setBarStyle('dark-content'),
-    StatusBar.setBackgroundColor(Colors.backgroundLight),
+    StatusBar.setBarStyle('light-content'),
+    StatusBar.setBackgroundColor(Colors.backgroundDarker),
     StatusBar.setTranslucent(true),
     (
       <SafeAreaView style={styles.appContainer}>

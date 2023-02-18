@@ -25,9 +25,10 @@ export default function AttractionFlatList({
             onPress={() => onCategoryPress(item)}>
             <Text
               variant="bodyMedium"
-              style={
-                selectedCategory === item ? styles.selectedCategoryItem : {}
-              }>
+              style={[
+                styles.text,
+                selectedCategory === item ? styles.selectedCategoryItem : {},
+              ]}>
               {item}
             </Text>
           </TouchableOpacity>
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   categoryItem: {
-    paddingRight: 12,
+    paddingRight: 32,
     justifyContent: 'center',
   },
   selectedCategoryItem: {
@@ -52,4 +53,5 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     fontWeight: 'bold',
   },
+  text: {color: Colors.textPrimaryLight},
 });
