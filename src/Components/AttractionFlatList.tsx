@@ -21,6 +21,7 @@ export default function AttractionFlatList({
         data={categories}
         renderItem={({item}: {item: any}) => (
           <TouchableOpacity
+            activeOpacity={0.75}
             style={styles.categoryItem}
             onPress={() => onCategoryPress(item)}>
             <Text

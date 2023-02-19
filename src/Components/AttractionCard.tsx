@@ -1,13 +1,15 @@
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {Colors} from '../Globals/Colors';
-import {BlurView} from '@react-native-community/blur';
+import {Text} from 'react-native-paper';
 
-const AttractionCard = ({imageSrc}: {imageSrc: string}) => {
+const AttractionCard = ({name, imageSrc}: {name: string; imageSrc: string}) => {
   return (
     <TouchableOpacity activeOpacity={0.75} style={styles.container}>
       <Image style={styles.image} source={{uri: imageSrc}} />
-      <Text style={styles.title}>Attraction</Text>
+      <View style={styles.bottomSection}>
+        <Text style={styles.title}>{name}</Text>
+      </View>
     </TouchableOpacity>
   );
 };
@@ -16,32 +18,34 @@ export default AttractionCard;
 
 const styles = StyleSheet.create({
   container: {
-    height: '24%',
     width: '46%',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
     elevation: 2,
     margin: '2%',
+    backgroundColor: Colors.backgroundDark,
   },
   image: {
-    height: '100%',
     width: '100%',
+    height: 150,
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
-    flex: 0.85,
   },
   title: {
     textAlign: 'center',
-    color: Colors.textPrimaryDark,
+    color: Colors.textPrimaryLight,
     letterSpacing: 2,
     fontWeight: 'bold',
     textAlignVertical: 'center',
-    backgroundColor: Colors.backgroundAccent,
+  },
+  bottomSection: {
     width: '100%',
-    borderBottomRightRadius: 4,
-    borderBottomLeftRadius: 4,
-    flex: 0.15,
+    backgroundColor: Colors.backgroundDark,
+    borderBottomRightRadius: 10,
+    borderBottomLeftRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: '4%',
   },
 });
