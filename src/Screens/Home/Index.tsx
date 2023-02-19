@@ -76,7 +76,17 @@ const HomeScreen = () => {
               : []
           }
           renderItem={({item}) => (
-            <AttractionCard imageSrc={item.url} name={item.name} />
+            <AttractionCard
+              iconName={
+                item.type === 'M'
+                  ? 'bank-outline'
+                  : item.type === 'P'
+                  ? 'forest'
+                  : 'silverware-fork-knife'
+              }
+              imageSrc={item.url}
+              name={item.name}
+            />
           )}
           numColumns={2}
         />
