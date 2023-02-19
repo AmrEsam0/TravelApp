@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     elevation: 2,
     margin: '2%',
-    backgroundColor: Colors.backgroundDark,
+    backgroundColor: Colors.backgroundAccent,
   },
   image: {
     width: '100%',
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   },
   bottomSection: {
     width: '100%',
-    backgroundColor: Colors.backgroundDark,
+    backgroundColor: Colors.backgroundAccent,
     borderBottomRightRadius: 10,
     borderBottomLeftRadius: 10,
     justifyContent: 'center',

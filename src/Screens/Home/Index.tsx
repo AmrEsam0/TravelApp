@@ -11,16 +11,48 @@ const HomeScreen = () => {
   const categories = ['All', 'Museums', 'Parks', 'Restaurants'];
   const [selectedId, setSelectedId] = React.useState('All');
   const items = [
-    {name: 'MUSEUM', url: 'https://picsum.photos/id/320/150/150'},
-    {name: 'PARK', url: 'https://picsum.photos/id/330/150/150'},
-    {name: 'RESTAURANT', url: 'https://picsum.photos/id/340/150/150'},
-    {name: 'MUSEUM', url: 'https://picsum.photos/id/350/150/150'},
-    {name: 'PARK', url: 'https://picsum.photos/id/360/150/150'},
-    {name: 'RESTAURANT', url: 'https://picsum.photos/id/370/150/150'},
-    {name: 'MUSEUM', url: 'https://picsum.photos/id/380/150/150'},
-    {name: 'PARK', url: 'https://picsum.photos/id/390/150/150'},
-    {name: 'RESTAURANT', url: 'https://picsum.photos/id/400/150/150'},
+    {name: 'MUSEUM', url: 'https://picsum.photos/id/320/150/150', type: 'M'},
+    {name: 'PARK', url: 'https://picsum.photos/id/330/150/150', type: 'P'},
+    {
+      name: 'RESTAURANT',
+      url: 'https://picsum.photos/id/340/150/150',
+      type: 'R',
+    },
+    {name: 'MUSEUM', url: 'https://picsum.photos/id/350/150/150', type: 'M'},
+    {name: 'PARK', url: 'https://picsum.photos/id/360/150/150', type: 'P'},
+    {
+      name: 'RESTAURANT',
+      url: 'https://picsum.photos/id/370/150/150',
+      type: 'R',
+    },
+    {name: 'MUSEUM', url: 'https://picsum.photos/id/380/150/150', type: 'M'},
+    {name: 'PARK', url: 'https://picsum.photos/id/390/150/150', type: 'P'},
+    {
+      name: 'RESTAURANT',
+      url: 'https://picsum.photos/id/400/150/150',
+      type: 'R',
+    },
   ];
+
+  const [museums, setMuseums] = React.useState<
+    {name: string; url: string; type: string}[]
+  >([]);
+  const [parks, setParks] = React.useState<
+    {name: string; url: string; type: string}[]
+  >([]);
+  const [restaurants, setRestaurants] = React.useState<
+    {name: string; url: string; type: string}[]
+  >([]);
+
+  React.useEffect(() => {
+    const filteredMuseums = items.filter(item => item.type === 'M');
+    const filteredParks = items.filter(item => item.type === 'P');
+    const filteredRestaurants = items.filter(item => item.type === 'R');
+    setMuseums(filteredMuseums);
+    setParks(filteredParks);
+    setRestaurants(filteredRestaurants);
+  }, []);
+
   return (
     <SafeAreaView style={styles.container}>
       <HomeScreenHeader />
@@ -32,7 +64,17 @@ const HomeScreen = () => {
       <View style={styles.cardContainer}>
         <FlatList
           showsVerticalScrollIndicator={false}
-          data={items}
+          data={
+            selectedId === 'All'
+              ? items
+              : selectedId === 'Museums'
+              ? museums
+              : selectedId === 'Parks'
+              ? parks
+              : selectedId === 'Restaurants'
+              ? restaurants
+              : []
+          }
           renderItem={({item}) => (
             <AttractionCard imageSrc={item.url} name={item.name} />
           )}
