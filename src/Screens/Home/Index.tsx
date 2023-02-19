@@ -18,9 +18,10 @@ const HomeScreen = () => {
         onCategoryPress={setSelectedId}
       />
       <View style={styles.cardContainer}>
-        <AttractionCard random={200} />
-        <AttractionCard random={200} />
-        <AttractionCard random={200} />
+        <AttractionCard imageSrc="https://picsum.photos/id/200/200/300" />
+        <AttractionCard imageSrc="https://picsum.photos/id/320/200/300" />
+        <AttractionCard imageSrc="https://picsum.photos/id/400/200/300" />
+        <AttractionCard imageSrc="https://picsum.photos/id/500/200/300" />
       </View>
     </SafeAreaView>
   );

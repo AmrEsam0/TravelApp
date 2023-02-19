@@ -4,6 +4,6 @@ import {Colors} from './Colors';
 export const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
-    backgroundColor: Colors.backgroundDarker,
+    backgroundColor: Colors.backgroundLight,
   },
 });

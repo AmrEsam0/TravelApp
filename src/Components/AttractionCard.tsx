@@ -1,17 +1,14 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {Colors} from '../Globals/Colors';
 import {BlurView} from '@react-native-community/blur';
 
-const AttractionCard = ({random}: {random: number}) => {
+const AttractionCard = ({imageSrc}: {imageSrc: string}) => {
   return (
-    <View style={styles.container}>
-      <Image
-        style={styles.image}
-        source={{uri: `https://picsum.photos/id/${random}/200/300`}}
-      />
+    <TouchableOpacity activeOpacity={0.75} style={styles.container}>
+      <Image style={styles.image} source={{uri: imageSrc}} />
       <Text style={styles.title}>Attraction</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -25,9 +22,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 10,
     elevation: 2,
-    shadowColor: Colors.backgroundDarker,
     margin: '2%',
-    backgroundColor: Colors.textAccent,
   },
   image: {
     height: '100%',
@@ -38,11 +33,11 @@ const styles = StyleSheet.create({
   },
   title: {
     textAlign: 'center',
-    color: Colors.textPrimaryLight,
+    color: Colors.textPrimaryDark,
     letterSpacing: 2,
     fontWeight: 'bold',
     textAlignVertical: 'center',
-    backgroundColor: Colors.backgroundDark,
+    backgroundColor: Colors.backgroundAccent,
     width: '100%',
     borderBottomRightRadius: 4,
     borderBottomLeftRadius: 4,

@@ -53,5 +53,5 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     fontWeight: 'bold',
   },
-  text: {color: Colors.textPrimaryLight},
+  text: {color: Colors.textPrimaryDark},
 });

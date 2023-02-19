@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     paddingLeft: '2%',
   },
   text: {
-    color: Colors.textPrimaryLight,
+    color: Colors.textPrimaryDark,
   },
   subHeader: {
     fontWeight: '200',
