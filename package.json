@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-navigation/native": "^6.1.4",
     "@types/react-native-vector-icons": "^6.4.13",
     "moti": "^0.23.7",
     "react": "18.2.0",

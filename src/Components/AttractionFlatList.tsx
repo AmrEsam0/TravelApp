@@ -17,11 +17,11 @@ export default function AttractionFlatList({
   const [selected, setSelected] = React.useState(selectedCategory);
 
   React.useEffect(() => {
-    setSelected(selectedCategory);
     //delayed animation
     setTimeout(() => {
       onPressAnimate();
     }, 200);
+    setSelected(selectedCategory);
   }, [selectedCategory]);
 
   return (

@@ -35,7 +35,7 @@ const HomeScreen = () => {
     }
   };
 
-  const items = JSON.parse(
+  const dummyData = JSON.parse(
     JSON.stringify(require('../../data/mockedData.json')),
   );
 
@@ -49,16 +49,16 @@ const HomeScreen = () => {
     {name: string; url: string; type: string}[]
   >([]);
 
+  const filteredMuseums = dummyData.filter(
+    (item: {type: string}) => item.type === 'M',
+  );
+  const filteredParks = dummyData.filter(
+    (item: {type: string}) => item.type === 'P',
+  );
+  const filteredRestaurants = dummyData.filter(
+    (item: {type: string}) => item.type === 'R',
+  );
   React.useEffect(() => {
-    const filteredMuseums = items.filter(
-      (item: {type: string}) => item.type === 'M',
-    );
-    const filteredParks = items.filter(
-      (item: {type: string}) => item.type === 'P',
-    );
-    const filteredRestaurants = items.filter(
-      (item: {type: string}) => item.type === 'R',
-    );
     setMuseums(filteredMuseums);
     setParks(filteredParks);
     setRestaurants(filteredRestaurants);
@@ -80,7 +80,7 @@ const HomeScreen = () => {
             showsVerticalScrollIndicator={false}
             data={
               selectedId === 'All'
-                ? items
+                ? dummyData
                 : selectedId === 'Museums'
                 ? museums
                 : selectedId === 'Parks'
