@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Smithsonian Institution",
+    "picture": "https://picsum.photos/id/320/150/150",
+    "country": "USA",
+    "address": "1000 Jefferson Dr SW, Washington, DC 20560, USA",
+    "location": {
+      "lat": 38.888,
+      "lng": -77.019
+    },
+    "type": "M"
+  },
+  {
+    "id": 2,
+    "name": "Crystal Cove Park",
+    "picture": "https://picsum.photos/id/330/150/150",
+    "country": "USA",
+    "address": "Crystal Cove State Park, 8471 N Coast Hwy, Laguna Beach, CA 92651, USA",
+    "location": {
+      "lat": 33.542,
+      "lng": -117.785
+    },
+    "type": "P"
+  },
+  {
+    "id": 3,
+    "name": "Tikka 'n' Talk",
+    "picture": "https://picsum.photos/id/340/150/150",
+    "country": "USA",
+    "address": "Tikka 'n' Talk, 1000 Jefferson Dr SW, Washington, DC 20560, USA",
+    "location": {
+      "lat": 38.888,
+      "lng": -77.019
+    },
+    "type": "R"
+  },
+  {
+    "id": 4,
+    "name": "Le Louvre",
+    "picture": "https://picsum.photos/id/350/150/150",
+    "country": "France",
+    "address": "Le Louvre, 75001 Paris, France",
+    "location": {
+      "lat": 48.861,
+      "lng": 2.338
+    },
+    "type": "M"
+  },
+  {
+    "id": 5,
+    "name": "Grizzle Forest Plaza",
+    "picture": "https://picsum.photos/id/360/150/150",
+    "country": "France",
+    "address": "Grizzle Forest Plaza, 75001 Paris, France",
+    "location": {
+      "lat": 48.861,
+      "lng": 2.338
+    },
+    "type": "P"
+  },
+  {
+    "id": 6,
+    "name": "Curry Kingdom",
+    "picture": "https://picsum.photos/id/370/150/150",
+    "country": "France",
+    "address": "Curry Kingdom, 75001 Paris, France",
+    "location": {
+      "lat": 48.861,
+      "lng": 2.338
+    },
+    "type": "R"
+  },
+  {
+    "id": 7,
+    "name": "The Acropolis Museum",
+    "picture": "https://picsum.photos/id/380/150/150",
+    "country": "Greece",
+    "address": "The Acropolis Museum, Dionysiou Areopagitou 15, 105 58 Athens, Greece",
+    "location": {
+      "lat": 37.971,
+      "lng": 23.725
+    },
+    "type": "M"
+  },
+  {
+    "id": 8,
+    "name": "King's Park",
+    "picture": "https://picsum.photos/id/390/150/150",
+    "country": "Greece",
+    "address": "King's Park, Dionysiou Areopagitou 15, 105 58 Athens, Greece",
+    "location": {
+      "lat": 37.971,
+      "lng": 23.725
+    },
+    "type": "P"
+  },
+  {
+    "id": 9,
+    "name": "Tikkaway",
+    "picture": "https://picsum.photos/id/400/150/150",
+    "country": "Greece",
+    "address": "Tikkaway, Dionysiou Areopagitou 15, 105 58 Athens, Greece",
+    "location": {
+      "lat": 37.971,
+      "lng": 23.725
+    },
+    "type": "R"
+  }
+]

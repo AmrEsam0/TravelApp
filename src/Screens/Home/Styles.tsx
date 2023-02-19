@@ -1,5 +1,4 @@
 import {StyleSheet} from 'react-native';
-import {Colors} from '../../Globals/Colors';
 
 export const styles = StyleSheet.create({
   container: {
@@ -7,5 +6,6 @@ export const styles = StyleSheet.create({
   },
   cardContainer: {
     flex: 1,
+    flexDirection: 'row',
   },
 });

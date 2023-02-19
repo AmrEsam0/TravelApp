@@ -7,11 +7,23 @@ export default function AttractionFlatList({
   categories,
   selectedCategory,
   onCategoryPress,
+  onPressAnimate,
 }: {
   categories: string[];
   selectedCategory: string;
   onCategoryPress: (category: string) => void;
+  onPressAnimate: () => void;
 }) {
+  const [selected, setSelected] = React.useState(selectedCategory);
+
+  React.useEffect(() => {
+    setSelected(selectedCategory);
+    //delayed animation
+    setTimeout(() => {
+      onPressAnimate();
+    }, 200);
+  }, [selectedCategory]);
+
   return (
     <View style={styles.container}>
       <FlatList
@@ -23,7 +35,10 @@ export default function AttractionFlatList({
           <TouchableOpacity
             activeOpacity={0.75}
             style={styles.categoryItem}
-            onPress={() => onCategoryPress(item)}>
+            onPress={() => {
+              onCategoryPress(item);
+              onPressAnimate();
+            }}>
             <Text
               variant="bodyMedium"
               style={[

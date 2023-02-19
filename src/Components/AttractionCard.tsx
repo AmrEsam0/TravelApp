@@ -23,7 +23,9 @@ const AttractionCard = ({
           size={20}
           color={Colors.textPrimaryLight}
         />
-        <Text style={styles.title}>{name}</Text>
+        <Text numberOfLines={1} style={styles.title}>
+          {name}
+        </Text>
       </View>
     </TouchableOpacity>
   );
@@ -50,7 +52,6 @@ const styles = StyleSheet.create({
   title: {
     textAlign: 'center',
     color: Colors.textPrimaryLight,
-    letterSpacing: 2,
     fontWeight: 'bold',
     textAlignVertical: 'center',
   },
@@ -66,6 +67,6 @@ const styles = StyleSheet.create({
     padding: '4%',
   },
   icon: {
-    marginRight: '4%',
+    marginRight: '2%',
   },
 });
