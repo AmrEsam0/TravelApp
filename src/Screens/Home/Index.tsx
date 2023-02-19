@@ -6,6 +6,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import AttractionFlatList from '../../Components/AttractionFlatList';
 import AttractionCard from '../../Components/AttractionCard';
 import {MotiView, useAnimationState} from 'moti';
+import {globalStyles} from '../../Globals/Styles';
 
 const HomeScreen = () => {
   const categories = ['All', 'Museums', 'Parks', 'Restaurants'];
@@ -66,7 +67,7 @@ const HomeScreen = () => {
   }, []);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={globalStyles.screenContainer}>
       <HomeScreenHeader />
       <AttractionFlatList
         onPressAnimate={animate}
