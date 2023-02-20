@@ -8,24 +8,25 @@ import AttractionCard from '../../Components/AttractionCard';
 import {MotiView, useAnimationState} from 'moti';
 import {globalStyles} from '../../Globals/Styles';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}: {navigation: any}) => {
   const categories = ['All', 'Museums', 'Parks', 'Restaurants'];
   const [selectedId, setSelectedId] = React.useState('All');
   const animateState = useAnimationState({
     from: {
       opacity: 0,
       // scale: 0,
-      translateX: Dimensions.get('window').width,
+      // translateX: Dimensions.get('window').width,
+      translateY: -15,
     },
     to: {
       opacity: 1,
       // scale: 1,
-      translateX: 0,
+      translateY: 0,
     },
     final: {
       opacity: 1,
       // scale: 1,
-      translateX: 0,
+      translateY: 0,
     },
   });
   const animate = () => {
@@ -101,6 +102,11 @@ const HomeScreen = () => {
                 }
                 imageSrc={item.picture}
                 name={item.name}
+                onPressNavigate={() => {
+                  navigation.navigate('AttractionDetails', {
+                    item: item,
+                  });
+                }}
               />
             )}
             numColumns={2}
