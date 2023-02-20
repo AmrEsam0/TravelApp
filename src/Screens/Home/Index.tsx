@@ -6,6 +6,7 @@ import AttractionFlatList from '../../Components/AttractionFlatList';
 import AttractionCard from '../../Components/AttractionCard';
 import {MotiView, useAnimationState} from 'moti';
 import {globalStyles} from '../../Globals/Styles';
+import {styles} from './Styles';
 
 const HomeScreen = ({navigation}: {navigation: any}) => {
   const categories = ['All', 'Museums', 'Parks', 'Restaurants'];
@@ -13,8 +14,7 @@ const HomeScreen = ({navigation}: {navigation: any}) => {
   const animateState = useAnimationState({
     from: {
       opacity: 0,
-      // scale: 0,
-      // translateX: Dimensions.get('window').width,
+      // scale: 0.0,
       translateY: -15,
     },
     to: {
@@ -75,7 +75,7 @@ const HomeScreen = ({navigation}: {navigation: any}) => {
         categories={categories}
         onCategoryPress={setSelectedId}
       />
-      <MotiView state={animateState}>
+      <MotiView style={styles.cardContainer} state={animateState}>
         <FlatList
           showsVerticalScrollIndicator={false}
           data={
