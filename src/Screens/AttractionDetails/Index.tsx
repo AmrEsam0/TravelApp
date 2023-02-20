@@ -1,4 +1,4 @@
-import {Dimensions, Image, View} from 'react-native';
+import {ImageBackground} from 'react-native';
 import React from 'react';
 import {Text} from 'react-native-paper';
 import {styles} from './Styles';
@@ -18,29 +18,23 @@ const AttractionDetailsScreen = ({
   return (
     <SafeAreaView style={globalStyles.screenContainer}>
       <SharedElement id={item.picture}>
-        <Image
+        <ImageBackground
           source={{uri: item.picture}}
-          style={{
-            width: '100%',
-            height: Dimensions.get('window').height / 2.4,
-            resizeMode: 'cover',
-            position: 'absolute',
-          }}
+          resizeMode="cover"
+          style={styles.imageBackground}
         />
       </SharedElement>
-      <View style={styles.header}>
-        <Icon
-          style={[globalStyles.globalText, styles.headerIcon, styles.text]}
-          name="arrow-left-circle"
-          size={30}
-          onPress={() => navigation.goBack()}
-        />
-        <Text
-          variant="bodyLarge"
-          style={[globalStyles.globalText, styles.text]}>
+      <Icon
+        style={[globalStyles.globalText, styles.headerIcon]}
+        name="arrow-left-circle"
+        size={42}
+        onPress={() => navigation.goBack()}
+      />
+      <SharedElement id={item.name}>
+        <Text style={[globalStyles.globalText, styles.headerTitle]}>
           {item.name}
         </Text>
-      </View>
+      </SharedElement>
     </SafeAreaView>
   );
 };
