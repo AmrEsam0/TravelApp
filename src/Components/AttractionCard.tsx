@@ -3,6 +3,7 @@ import React from 'react';
 import {Colors} from '../Globals/Colors';
 import {Text} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {SharedElement} from 'react-navigation-shared-element';
 
 const AttractionCard = ({
   name,
@@ -17,10 +18,13 @@ const AttractionCard = ({
 }) => {
   return (
     <TouchableOpacity
+      key={imageSrc}
       activeOpacity={0.75}
       style={styles.container}
       onPress={() => onPressNavigate()}>
-      <Image style={styles.image} source={{uri: imageSrc}} />
+      <SharedElement id={imageSrc} style={{width: '100%'}}>
+        <Image style={styles.image} source={{uri: imageSrc}} />
+      </SharedElement>
       <View style={styles.bottomSection}>
         <Icon
           style={styles.icon}
@@ -52,6 +56,7 @@ const styles = StyleSheet.create({
     height: 150,
     borderTopRightRadius: 10,
     borderTopLeftRadius: 10,
+    resizeMode: 'cover',
   },
   title: {
     textAlign: 'center',
