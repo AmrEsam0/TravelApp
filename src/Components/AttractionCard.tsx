@@ -32,9 +32,11 @@ const AttractionCard = ({
           size={20}
           color={Colors.textPrimaryLight}
         />
-        <Text numberOfLines={1} style={styles.title}>
-          {name}
-        </Text>
+        <SharedElement id={name}>
+          <Text numberOfLines={1} style={styles.title}>
+            {name}
+          </Text>
+        </SharedElement>
       </View>
     </TouchableOpacity>
   );

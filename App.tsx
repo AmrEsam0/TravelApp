@@ -25,7 +25,7 @@ const App = () => {
             component={AttractionDetailsScreen}
             sharedElements={route => {
               const {item: item} = route.params;
-              return [item.picture];
+              return [{id: item.picture}, {id: item.name, animation: 'fade'}];
             }}
             options={() => ({
               cardStyleInterpolator: ({current: {progress}}) => {
