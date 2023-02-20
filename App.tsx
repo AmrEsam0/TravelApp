@@ -4,15 +4,14 @@ import {StatusBar} from 'react-native';
 import {Colors} from './src/Globals/Colors';
 import HomeScreen from './src/Screens/Home/Index';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
 import AttractionDetailsScreen from './src/Screens/AttractionDetails/Index';
+import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
 
-const Stack = createStackNavigator();
+const Stack = createSharedElementStackNavigator();
 const App = () => {
   return (
     StatusBar.setBarStyle('dark-content'),
     StatusBar.setBackgroundColor(Colors.backgroundLight),
-    StatusBar.setTranslucent(true),
     (
       <NavigationContainer>
         <Stack.Navigator
@@ -24,6 +23,19 @@ const App = () => {
           <Stack.Screen
             name="AttractionDetails"
             component={AttractionDetailsScreen}
+            sharedElements={route => {
+              const {item: item} = route.params;
+              return [item.picture];
+            }}
+            options={() => ({
+              cardStyleInterpolator: ({current: {progress}}) => {
+                return {
+                  cardStyle: {
+                    opacity: progress,
+                  },
+                };
+              },
+            })}
           />
         </Stack.Navigator>
       </NavigationContainer>
