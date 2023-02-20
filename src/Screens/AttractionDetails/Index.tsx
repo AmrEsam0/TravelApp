@@ -15,7 +15,7 @@ const AttractionDetailsScreen = ({
 }) => {
   const {item} = route.params || {};
   return (
-    <SafeAreaView style={globalStyles.screenContainer}>
+    <SafeAreaView style={[globalStyles.screenContainer, styles.customScreen]}>
       <View style={styles.header}>
         <Icon
           style={[globalStyles.globalText, styles.headerIcon, styles.text]}

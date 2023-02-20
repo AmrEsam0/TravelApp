@@ -1,10 +1,14 @@
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 import {Colors} from '../../Globals/Colors';
 
+const height = Dimensions.get('window').height;
 export const styles = StyleSheet.create({
   text: {
     textAlignVertical: 'center',
     textAlign: 'center',
+  },
+  customScreen: {
+    transform: [{translateY: height / 2}],
   },
   header: {
     flexDirection: 'row',

@@ -1,6 +1,5 @@
 import React from 'react';
-import {styles} from './Styles';
-import {Dimensions, FlatList, View} from 'react-native';
+import {FlatList} from 'react-native';
 import HomeScreenHeader from '../../Components/HomeScreenHeader';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import AttractionFlatList from '../../Components/AttractionFlatList';
@@ -30,7 +29,7 @@ const HomeScreen = ({navigation}: {navigation: any}) => {
     },
   });
   const animate = () => {
-    if (animateState.current === 'to') {
+    if (animateState.current === 'to' || animateState.current === 'final') {
       animateState.transitionTo('from');
     } else {
       animateState.transitionTo('to');
@@ -64,7 +63,7 @@ const HomeScreen = ({navigation}: {navigation: any}) => {
     setMuseums(filteredMuseums);
     setParks(filteredParks);
     setRestaurants(filteredRestaurants);
-    animateState.transitionTo('final');
+    animateState.transitionTo('to');
   }, []);
 
   return (
@@ -76,43 +75,41 @@ const HomeScreen = ({navigation}: {navigation: any}) => {
         categories={categories}
         onCategoryPress={setSelectedId}
       />
-      <View style={styles.cardContainer}>
-        <MotiView state={animateState}>
-          <FlatList
-            showsVerticalScrollIndicator={false}
-            data={
-              selectedId === 'All'
-                ? dummyData
-                : selectedId === 'Museums'
-                ? museums
-                : selectedId === 'Parks'
-                ? parks
-                : selectedId === 'Restaurants'
-                ? restaurants
-                : []
-            }
-            renderItem={({item}: {item: any}) => (
-              <AttractionCard
-                iconName={
-                  item.type === 'M'
-                    ? 'bank-outline'
-                    : item.type === 'P'
-                    ? 'forest'
-                    : 'silverware-fork-knife'
-                }
-                imageSrc={item.picture}
-                name={item.name}
-                onPressNavigate={() => {
-                  navigation.navigate('AttractionDetails', {
-                    item: item,
-                  });
-                }}
-              />
-            )}
-            numColumns={2}
-          />
-        </MotiView>
-      </View>
+      <MotiView state={animateState}>
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          data={
+            selectedId === 'All'
+              ? dummyData
+              : selectedId === 'Museums'
+              ? museums
+              : selectedId === 'Parks'
+              ? parks
+              : selectedId === 'Restaurants'
+              ? restaurants
+              : []
+          }
+          renderItem={({item}: {item: any}) => (
+            <AttractionCard
+              iconName={
+                item.type === 'M'
+                  ? 'bank-outline'
+                  : item.type === 'P'
+                  ? 'forest'
+                  : 'silverware-fork-knife'
+              }
+              imageSrc={item.picture}
+              name={item.name}
+              onPressNavigate={() => {
+                navigation.navigate('AttractionDetails', {
+                  item: item,
+                });
+              }}
+            />
+          )}
+          numColumns={2}
+        />
+      </MotiView>
     </SafeAreaView>
   );
 };
