@@ -65,7 +65,8 @@ export default function AttractionFlatList({
 const styles = StyleSheet.create({
   container: {
     height: '8%',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
   },
   categoryItem: {
     paddingHorizontal: 16,
