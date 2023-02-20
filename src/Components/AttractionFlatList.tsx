@@ -15,7 +15,6 @@ export default function AttractionFlatList({
   onPressAnimate: () => void;
 }) {
   const [selected, setSelected] = React.useState(selectedCategory);
-  const [skip, setSkip] = React.useState(false);
 
   React.useEffect(() => {
     //delayed animation
