@@ -6,4 +6,7 @@ export const globalStyles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.backgroundLight,
   },
+  globalText: {
+    color: Colors.textPrimaryDark,
+  },
 });

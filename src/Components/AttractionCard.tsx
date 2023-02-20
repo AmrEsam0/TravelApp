@@ -8,13 +8,18 @@ const AttractionCard = ({
   name,
   imageSrc,
   iconName,
+  onPressNavigate,
 }: {
   name: string;
   imageSrc: string;
   iconName: string;
+  onPressNavigate: () => void;
 }) => {
   return (
-    <TouchableOpacity activeOpacity={0.75} style={styles.container}>
+    <TouchableOpacity
+      activeOpacity={0.75}
+      style={styles.container}
+      onPress={() => onPressNavigate()}>
       <Image style={styles.image} source={{uri: imageSrc}} />
       <View style={styles.bottomSection}>
         <Icon
@@ -39,7 +44,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
-    elevation: 2,
     margin: '2%',
     backgroundColor: Colors.backgroundAccent,
   },
