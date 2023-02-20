@@ -35,6 +35,7 @@ export default function AttractionFlatList({
           <TouchableOpacity
             activeOpacity={0.75}
             style={styles.categoryItem}
+            disabled={selected === item}
             onPress={() => {
               onCategoryPress(item);
               onPressAnimate();
