@@ -18,17 +18,17 @@ export default function AttractionFlatList({
 
   React.useEffect(() => {
     //delayed animation
+    onPressAnimate();
     setTimeout(() => {
-      onPressAnimate();
-    }, 200);
-    setSelected(selectedCategory);
+      setSelected(selectedCategory);
+    }, 100);
   }, []);
   React.useEffect(() => {
     //delayed animation
+    onPressAnimate();
     setTimeout(() => {
-      onPressAnimate();
-    }, 200);
-    setSelected(selectedCategory);
+      setSelected(selectedCategory);
+    }, 100);
   }, [selectedCategory]);
 
   return (

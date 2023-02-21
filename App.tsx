@@ -27,15 +27,15 @@ const App = () => {
               const {item: item} = route.params;
               return [{id: item.picture}, {id: item.name, animation: 'fade'}];
             }}
-            options={() => ({
-              cardStyleInterpolator: ({current: {progress}}) => {
-                return {
-                  cardStyle: {
-                    opacity: progress,
-                  },
-                };
-              },
-            })}
+            // options={() => ({
+            //   cardStyleInterpolator: ({current: {progress}}) => {
+            //     return {
+            //       cardStyle: {
+            //         opacity: progress,
+            //       },
+            //     };
+            //   },
+            // })}
           />
         </Stack.Navigator>
       </NavigationContainer>

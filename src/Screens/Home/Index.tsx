@@ -63,7 +63,7 @@ const HomeScreen = ({navigation}: {navigation: any}) => {
     setMuseums(filteredMuseums);
     setParks(filteredParks);
     setRestaurants(filteredRestaurants);
-    animateState.transitionTo('to');
+    // animateState.transitionTo('to');
   }, []);
 
   return (
