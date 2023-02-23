@@ -68,7 +68,6 @@ export default function AttractionFlatList({
 const styles = StyleSheet.create({
   container: {
     paddingTop: '1%',
-    paddingBottom: '3%',
     paddingLeft: '3%',
     width: '100%',
     alignItems: 'flex-start',
@@ -76,6 +75,7 @@ const styles = StyleSheet.create({
   categoryItem: {
     paddingLeft: 8,
     paddingRight: 8,
+    paddingVertical: 4,
     justifyContent: 'center',
     textAlignVertical: 'center',
     textAlign: 'center',
@@ -90,7 +90,11 @@ const styles = StyleSheet.create({
     color: Colors.textPrimaryDark,
     textAlignVertical: 'center',
     textAlign: 'center',
-    padding: 6,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: Colors.backgroundAccent,
   },
   firstItem: {
     paddingLeft: 0,
