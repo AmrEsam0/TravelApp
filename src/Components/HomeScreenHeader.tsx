@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
   },
   subHeader: {
     fontWeight: '200',
-    paddingTop: '8%',
+    paddingTop: '2%',
+    paddingLeft: '1%',
   },
 });
