@@ -35,13 +35,16 @@ export default function AttractionFlatList({
     <View style={styles.container}>
       <FlatList
         horizontal
-        ListHeaderComponent={() => <View style={{width: 12}} />}
         showsHorizontalScrollIndicator={false}
         data={categories}
         renderItem={({item}: {item: any}) => (
           <TouchableOpacity
             activeOpacity={0.75}
-            style={styles.categoryItem}
+            style={[
+              styles.categoryItem,
+              item === 'All' ? styles.firstItem : {},
+              item === 'Restaurants' ? styles.lastItem : {},
+            ]}
             disabled={selected === item}
             onPress={() => {
               onCategoryPress(item);
@@ -64,22 +67,22 @@ export default function AttractionFlatList({
 
 const styles = StyleSheet.create({
   container: {
-    height: '8%',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
+    paddingTop: '1%',
+    paddingBottom: '3%',
+    paddingLeft: '3%',
+    width: '100%',
+    alignItems: 'flex-start',
   },
   categoryItem: {
-    paddingHorizontal: 16,
+    paddingLeft: 8,
+    paddingRight: 8,
     justifyContent: 'center',
-  },
-  selectedCategoryItem: {
-    padding: 4,
     textAlignVertical: 'center',
     textAlign: 'center',
+  },
+  selectedCategoryItem: {
     fontWeight: 'bold',
-    borderWidth: 1,
     borderRadius: 4,
-    borderColor: Colors.textAccent,
     backgroundColor: Colors.backgroundAccent,
     color: Colors.textPrimaryLight,
   },
@@ -87,6 +90,12 @@ const styles = StyleSheet.create({
     color: Colors.textPrimaryDark,
     textAlignVertical: 'center',
     textAlign: 'center',
-    paddingHorizontal: 6,
+    padding: 6,
+  },
+  firstItem: {
+    paddingLeft: 0,
+  },
+  lastItem: {
+    paddingRight: 0,
   },
 });

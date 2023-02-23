@@ -1,9 +1,14 @@
-import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {
+  ImageBackground,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React from 'react';
 import {Colors} from '../Globals/Colors';
 import {Text} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {SharedElement} from 'react-navigation-shared-element';
+import LinearGradient from 'react-native-linear-gradient';
 
 const AttractionCard = ({
   name,
@@ -22,22 +27,29 @@ const AttractionCard = ({
       activeOpacity={0.75}
       style={styles.container}
       onPress={() => onPressNavigate()}>
-      <SharedElement id={imageSrc} style={{width: '100%'}}>
-        <Image style={styles.image} source={{uri: imageSrc}} />
-      </SharedElement>
-      <View style={styles.bottomSection}>
-        <Icon
-          style={styles.icon}
-          name={iconName}
-          size={20}
-          color={Colors.textPrimaryLight}
+      <ImageBackground
+        style={styles.image}
+        source={{uri: imageSrc}}
+        resizeMode={'cover'}
+        imageStyle={{borderRadius: 6}}>
+        <LinearGradient
+          style={styles.gradient}
+          colors={['#FFFFFF00', '#000000']}
+          start={{x: 0, y: 0.6}}
+          end={{x: 0, y: 1}}
         />
-        <SharedElement id={name}>
+        <View style={styles.bottomSection}>
+          <Icon
+            style={styles.icon}
+            name={iconName}
+            size={20}
+            color={Colors.textPrimaryLight}
+          />
           <Text numberOfLines={1} style={styles.title}>
             {name}
           </Text>
-        </SharedElement>
-      </View>
+        </View>
+      </ImageBackground>
     </TouchableOpacity>
   );
 };
@@ -49,15 +61,13 @@ const styles = StyleSheet.create({
     width: '46%',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 10,
+    borderRadius: 6,
     margin: '2%',
-    backgroundColor: Colors.backgroundAccent,
   },
   image: {
     width: '100%',
-    height: 150,
-    borderTopRightRadius: 10,
-    borderTopLeftRadius: 10,
+    height: 180,
+    borderRadius: 6,
     resizeMode: 'cover',
   },
   title: {
@@ -68,16 +78,22 @@ const styles = StyleSheet.create({
   },
   bottomSection: {
     width: '100%',
-    flex: 1,
+    // height: '20%',
     flexDirection: 'row',
-    backgroundColor: Colors.backgroundAccent,
-    borderBottomRightRadius: 10,
-    borderBottomLeftRadius: 10,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
-    padding: '4%',
+    bottom: '3%',
+    left: '2%',
+    position: 'absolute',
   },
   icon: {
     marginRight: '2%',
+  },
+  gradient: {
+    width: '100%',
+    height: 170,
+    borderRadius: 6,
+    position: 'absolute',
+    bottom: 0,
   },
 });

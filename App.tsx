@@ -5,9 +5,9 @@ import {Colors} from './src/Globals/Colors';
 import HomeScreen from './src/Screens/Home/Index';
 import {NavigationContainer} from '@react-navigation/native';
 import AttractionDetailsScreen from './src/Screens/AttractionDetails/Index';
-import {createSharedElementStackNavigator} from 'react-navigation-shared-element';
+import {createStackNavigator} from '@react-navigation/stack';
 
-const Stack = createSharedElementStackNavigator();
+const Stack = createStackNavigator();
 const App = () => {
   return (
     StatusBar.setBarStyle('dark-content'),
@@ -23,10 +23,7 @@ const App = () => {
           <Stack.Screen
             name="AttractionDetails"
             component={AttractionDetailsScreen}
-            sharedElements={route => {
-              const {item: item} = route.params;
-              return [{id: item.picture}, {id: item.name, animation: 'fade'}];
-            }}
+
             // options={() => ({
             //   cardStyleInterpolator: ({current: {progress}}) => {
             //     return {
