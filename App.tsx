@@ -10,33 +10,33 @@ import {createStackNavigator} from '@react-navigation/stack';
 const Stack = createStackNavigator();
 const App = () => {
   return (
-    StatusBar.setBarStyle('dark-content'),
-    StatusBar.setBackgroundColor(Colors.backgroundLight),
-    (
-      <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="Home"
-          screenOptions={{
-            headerShown: false,
-          }}>
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen
-            name="AttractionDetails"
-            component={AttractionDetailsScreen}
-
-            // options={() => ({
-            //   cardStyleInterpolator: ({current: {progress}}) => {
-            //     return {
-            //       cardStyle: {
-            //         opacity: progress,
-            //       },
-            //     };
-            //   },
-            // })}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    )
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="Home"
+        screenListeners={{
+          focus: () => {
+            StatusBar.setBarStyle('dark-content');
+            StatusBar.setBackgroundColor(Colors.transparent);
+            StatusBar.setTranslucent(true);
+          },
+        }}
+        screenOptions={{
+          headerShown: false,
+        }}>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen
+          name="AttractionDetails"
+          component={AttractionDetailsScreen}
+          listeners={{
+            focus: () => {
+              StatusBar.setBarStyle('light-content');
+              StatusBar.setBackgroundColor(Colors.transparent);
+              StatusBar.setTranslucent(true);
+            },
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 export default App;
