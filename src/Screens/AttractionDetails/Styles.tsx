@@ -2,7 +2,7 @@ import {Dimensions, StyleSheet} from 'react-native';
 import {Colors} from '../../Globals/Colors';
 
 export const styles = StyleSheet.create({
-  headerTitle: {
+  title: {
     textAlignVertical: 'center',
     textAlign: 'center',
     color: Colors.textPrimaryDark,
@@ -10,17 +10,29 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     left: '4%',
     alignSelf: 'flex-start',
-    top: Dimensions.get('window').height / 2.5,
+    top: Dimensions.get('window').height / 2,
   },
   headerIcon: {
-    marginRight: '18%',
-    color: Colors.textPrimaryDark,
-    marginLeft: '4%',
-    marginTop: '4%',
+    color: Colors.textPrimaryLight,
+    width: '14%',
+    textAlign: 'center',
+    marginLeft: '2%',
+    borderRadius: 4,
+    backgroundColor: Colors.backgroundAccent,
+    padding: 6,
+    position: 'absolute',
+    top: '8%',
   },
   imageBackground: {
     width: '100%',
-    height: Dimensions.get('window').height / 2.2,
+    height: Dimensions.get('window').height / 1.8,
     position: 'absolute',
+    top: 0,
+  },
+  tint: {
+    width: '100%',
+    height: Dimensions.get('window').height / 1.8,
+    position: 'absolute',
+    top: 0,
   },
 });
