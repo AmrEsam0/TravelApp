@@ -55,6 +55,7 @@ export default function AttractionFlatList({
               style={[
                 styles.text,
                 selectedCategory === item ? styles.selectedCategoryItem : {},
+                selectedCategory !== item ? {opacity: 0.86} : {},
               ]}>
               {item}
             </Text>

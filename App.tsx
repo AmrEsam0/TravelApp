@@ -9,6 +9,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 const App = () => {
+  StatusBar.setBackgroundColor(Colors.transparent);
+  StatusBar.setTranslucent(true);
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -16,8 +18,6 @@ const App = () => {
         screenListeners={{
           focus: () => {
             StatusBar.setBarStyle('dark-content');
-            StatusBar.setBackgroundColor(Colors.transparent);
-            StatusBar.setTranslucent(true);
           },
         }}
         screenOptions={{
@@ -30,8 +30,6 @@ const App = () => {
           listeners={{
             focus: () => {
               StatusBar.setBarStyle('light-content');
-              StatusBar.setBackgroundColor(Colors.transparent);
-              StatusBar.setTranslucent(true);
             },
           }}
         />
