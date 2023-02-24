@@ -9,7 +9,16 @@
       "lat": 38.888,
       "lng": -77.019
     },
-    "type": "M"
+    "type": "M",
+    "imageList": [
+      "https://picsum.photos/id/1/100/100",
+      "https://picsum.photos/id/2/100/100",
+      "https://picsum.photos/id/3/100/100",
+      "https://picsum.photos/id/4/100/100",
+      "https://picsum.photos/id/5/100/100",
+      "https://picsum.photos/id/6/100/100",
+      "https://picsum.photos/id/7/100/100"
+    ]
   },
   {
     "id": 2,
@@ -21,7 +30,16 @@
       "lat": 33.542,
       "lng": -117.785
     },
-    "type": "P"
+    "type": "P",
+    "imageList": [
+      "https://picsum.photos/id/1/100/100",
+      "https://picsum.photos/id/2/100/100",
+      "https://picsum.photos/id/3/100/100",
+      "https://picsum.photos/id/4/100/100",
+      "https://picsum.photos/id/5/100/100",
+      "https://picsum.photos/id/6/100/100",
+      "https://picsum.photos/id/7/100/100"
+    ]
   },
   {
     "id": 3,
@@ -33,7 +51,16 @@
       "lat": 38.888,
       "lng": -77.019
     },
-    "type": "R"
+    "type": "R",
+    "imageList": [
+      "https://picsum.photos/id/1/100/100",
+      "https://picsum.photos/id/2/100/100",
+      "https://picsum.photos/id/3/100/100",
+      "https://picsum.photos/id/4/100/100",
+      "https://picsum.photos/id/5/100/100",
+      "https://picsum.photos/id/6/100/100",
+      "https://picsum.photos/id/7/100/100"
+    ]
   },
   {
     "id": 4,
@@ -45,7 +72,16 @@
       "lat": 48.861,
       "lng": 2.338
     },
-    "type": "M"
+    "type": "M",
+    "imageList": [
+      "https://picsum.photos/id/1/100/100",
+      "https://picsum.photos/id/2/100/100",
+      "https://picsum.photos/id/3/100/100",
+      "https://picsum.photos/id/4/100/100",
+      "https://picsum.photos/id/5/100/100",
+      "https://picsum.photos/id/6/100/100",
+      "https://picsum.photos/id/7/100/100"
+    ]
   },
   {
     "id": 5,
@@ -57,7 +93,16 @@
       "lat": 48.861,
       "lng": 2.338
     },
-    "type": "P"
+    "type": "P",
+    "imageList": [
+      "https://picsum.photos/id/1/100/100",
+      "https://picsum.photos/id/2/100/100",
+      "https://picsum.photos/id/3/100/100",
+      "https://picsum.photos/id/4/100/100",
+      "https://picsum.photos/id/5/100/100",
+      "https://picsum.photos/id/6/100/100",
+      "https://picsum.photos/id/7/100/100"
+    ]
   },
   {
     "id": 6,
@@ -69,7 +114,16 @@
       "lat": 48.861,
       "lng": 2.338
     },
-    "type": "R"
+    "type": "R",
+    "imageList": [
+      "https://picsum.photos/id/1/100/100",
+      "https://picsum.photos/id/2/100/100",
+      "https://picsum.photos/id/3/100/100",
+      "https://picsum.photos/id/4/100/100",
+      "https://picsum.photos/id/5/100/100",
+      "https://picsum.photos/id/6/100/100",
+      "https://picsum.photos/id/7/100/100"
+    ]
   },
   {
     "id": 7,
@@ -81,7 +135,16 @@
       "lat": 37.971,
       "lng": 23.725
     },
-    "type": "M"
+    "type": "M",
+    "imageList": [
+      "https://picsum.photos/id/1/100/100",
+      "https://picsum.photos/id/2/100/100",
+      "https://picsum.photos/id/3/100/100",
+      "https://picsum.photos/id/4/100/100",
+      "https://picsum.photos/id/5/100/100",
+      "https://picsum.photos/id/6/100/100",
+      "https://picsum.photos/id/7/100/100"
+    ]
   },
   {
     "id": 8,
@@ -93,7 +156,16 @@
       "lat": 37.971,
       "lng": 23.725
     },
-    "type": "P"
+    "type": "P",
+    "imageList": [
+      "https://picsum.photos/id/1/100/100",
+      "https://picsum.photos/id/2/100/100",
+      "https://picsum.photos/id/3/100/100",
+      "https://picsum.photos/id/4/100/100",
+      "https://picsum.photos/id/5/100/100",
+      "https://picsum.photos/id/6/100/100",
+      "https://picsum.photos/id/7/100/100"
+    ]
   },
   {
     "id": 9,
@@ -105,6 +177,15 @@
       "lat": 37.971,
       "lng": 23.725
     },
-    "type": "R"
+    "type": "R",
+    "imageList": [
+      "https://picsum.photos/id/1/100/100",
+      "https://picsum.photos/id/2/100/100",
+      "https://picsum.photos/id/3/100/100",
+      "https://picsum.photos/id/4/100/100",
+      "https://picsum.photos/id/5/100/100",
+      "https://picsum.photos/id/6/100/100",
+      "https://picsum.photos/id/7/100/100"
+    ]
   }
 ]

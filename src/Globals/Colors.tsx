@@ -7,6 +7,9 @@ export const Colors = {
   textPrimaryLight: '#edf2f4',
   textAccent: '#ef233c',
   transparent: 'transparent',
+  backgroundGlassLight: 'rgba(255, 255, 255, 0.48)',
+  backgroundGlassDark: 'rgba(0, 0, 0, 0.48)',
+  backgroundGlassDarker: 'rgba(0, 0, 0, 0.68)',
   // <color name="background_light"> edf2f4</color>
   // <color name="background_dark"> 2b2d42</color>
   // <color name="background_darker"> 000814</color>
