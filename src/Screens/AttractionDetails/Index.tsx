@@ -1,4 +1,4 @@
-import {ImageBackground} from 'react-native';
+import {ImageBackground, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {Text} from 'react-native-paper';
 import {styles} from './Styles';
@@ -17,11 +17,15 @@ const AttractionDetailsScreen = ({
   route: any;
 }) => {
   const {item} = route.params || {};
+  const [selectedImageIndex, setSelectedImageIndex] = React.useState<number>(0);
+  const [selectedImage, setSelectedImage] = React.useState<string>(
+    item.picture,
+  );
   const imageListToDisplay = item.imageList.slice(0, 4);
   return (
     <SafeAreaView style={globalStyles.screenContainer}>
       <ImageBackground
-        source={{uri: item.picture}}
+        source={{uri: selectedImage}}
         resizeMode="cover"
         style={styles.imageBackground}>
         <LinearGradient
@@ -31,23 +35,35 @@ const AttractionDetailsScreen = ({
           end={{x: 0, y: 0.6}}
         />
         <View style={styles.imageListContainer}>
-          {imageListToDisplay.map((image: string) => (
-            <ImageBackground
+          {imageListToDisplay.map((image: string, index: number) => (
+            <TouchableOpacity
+              activeOpacity={0.5}
+              key={index}
               style={styles.imageListItem}
-              source={{uri: image}}
-              resizeMode="cover">
-              {
-                //show view overlay if it's the last item
-                imageListToDisplay.indexOf(image) ===
-                  imageListToDisplay.length - 1 && (
-                  <View style={styles.lastItemOverlay}>
-                    <Text style={styles.lastItemOverlayText}>
-                      {item.imageList.length - 4}+
-                    </Text>
-                  </View>
-                )
-              }
-            </ImageBackground>
+              onPress={() => {
+                setSelectedImageIndex(index);
+                setSelectedImage(image);
+              }}>
+              <ImageBackground
+                style={[
+                  styles.imageListItemBackground,
+                  selectedImageIndex === index && styles.selectedImage,
+                ]}
+                source={{uri: image}}
+                resizeMode="cover">
+                {
+                  //show view overlay if it's the last item
+                  imageListToDisplay.indexOf(image) ===
+                    imageListToDisplay.length - 1 && (
+                    <View style={styles.lastItemOverlay}>
+                      <Text style={styles.lastItemOverlayText}>
+                        {item.imageList.length - 4}+
+                      </Text>
+                    </View>
+                  )
+                }
+              </ImageBackground>
+            </TouchableOpacity>
           ))}
         </View>
       </ImageBackground>

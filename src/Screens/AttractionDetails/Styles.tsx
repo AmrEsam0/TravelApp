@@ -56,9 +56,16 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     alignContent: 'center',
     justifyContent: 'center',
+    marginHorizontal: 2,
+  },
+  imageListItemBackground: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 10,
+    alignContent: 'center',
+    justifyContent: 'center',
     resizeMode: 'cover',
     overflow: 'hidden',
-    marginHorizontal: 2,
   },
   lastItemOverlay: {
     width: '100%',
@@ -74,5 +81,9 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold',
+  },
+  selectedImage: {
+    borderWidth: 1,
+    borderColor: Colors.backgroundAccent,
   },
 });
