@@ -1,7 +1,7 @@
 import {ImageBackground, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {Text} from 'react-native-paper';
-import {styles} from './Styles';
+import {styles} from './styles';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {globalStyles} from '../../Globals/Styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -22,6 +22,7 @@ const AttractionDetailsScreen = ({
     item.picture,
   );
   const imageListToDisplay = item.imageList.slice(0, 4);
+
   return (
     <SafeAreaView style={globalStyles.screenContainer}>
       <ImageBackground
@@ -41,6 +42,13 @@ const AttractionDetailsScreen = ({
               key={index}
               style={styles.imageListItem}
               onPress={() => {
+                //if it's the last item, show the full list from GalleryScreen
+                if (imageListToDisplay.indexOf(image) === 3) {
+                  navigation.navigate('Gallery', {
+                    imageList: item.imageList,
+                  });
+                  return;
+                }
                 setSelectedImageIndex(index);
                 setSelectedImage(image);
               }}>

@@ -83,7 +83,7 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   selectedImage: {
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: Colors.backgroundAccent,
   },
 });

@@ -4,11 +4,11 @@ import HomeScreenHeader from '../../Components/HomeScreenHeader';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import AttractionFlatList from '../../Components/AttractionFlatList';
 import AttractionCard from '../../Components/AttractionCard';
-import {MotiView, useAnimationState, View} from 'moti';
+import {MotiView, useAnimationState} from 'moti';
 import {globalStyles} from '../../Globals/Styles';
-import {styles} from './Styles';
 import HomeExploreButton from '../../Components/HomeExploreButton';
 import Orientation from 'react-native-orientation-locker';
+import {styles} from './styles';
 
 const HomeScreen = ({navigation}: {navigation: any}) => {
   const categories = ['All', 'Museums', 'Parks', 'Restaurants'];
@@ -65,7 +65,6 @@ const HomeScreen = ({navigation}: {navigation: any}) => {
     setMuseums(filteredMuseums);
     setParks(filteredParks);
     setRestaurants(filteredRestaurants);
-    // animateState.transitionTo('to');
     Orientation.lockToPortrait();
   }, []);
 
