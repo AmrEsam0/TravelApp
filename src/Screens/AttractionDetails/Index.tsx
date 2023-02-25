@@ -1,5 +1,5 @@
 import {ImageBackground, TouchableOpacity} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Text} from 'react-native-paper';
 import {styles} from './styles';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import LinearGradient from 'react-native-linear-gradient';
 import {Colors} from '../../Globals/Colors';
 import {View} from 'moti';
+import {FlatList} from 'react-native-gesture-handler';
 
 const AttractionDetailsScreen = ({
   navigation,
@@ -19,9 +20,15 @@ const AttractionDetailsScreen = ({
   const {item} = route.params || {};
   const [selectedImageIndex, setSelectedImageIndex] = React.useState<number>(0);
   const [selectedImage, setSelectedImage] = React.useState<string>(
-    item.picture,
+    item.imageList[0],
   );
-  const imageListToDisplay = item.imageList.slice(0, 4);
+  const [fullListSize, setFullListSize] = React.useState<number>(0);
+  const [showImage, setShowImage] = React.useState<boolean>(false);
+  const imageListToDisplay = item.imageList;
+  useEffect(() => {
+    setFullListSize(item.imageList.length);
+    console.log(selectedImage);
+  }, [item]);
 
   return (
     <SafeAreaView style={globalStyles.screenContainer}>
@@ -35,53 +42,53 @@ const AttractionDetailsScreen = ({
           start={{x: 0, y: 0.05}}
           end={{x: 0, y: 0.6}}
         />
-        <View style={styles.imageListContainer}>
-          {imageListToDisplay.map((image: string, index: number) => (
-            <TouchableOpacity
-              activeOpacity={0.5}
-              key={index}
-              style={styles.imageListItem}
-              onPress={() => {
-                //if it's the last item, show the full list from GalleryScreen
-                if (imageListToDisplay.indexOf(image) === 3) {
-                  navigation.navigate('Gallery', {
-                    imageList: item.imageList,
-                  });
-                  return;
-                }
-                setSelectedImageIndex(index);
-                setSelectedImage(image);
-              }}>
-              <ImageBackground
-                style={[
-                  styles.imageListItemBackground,
-                  selectedImageIndex === index && styles.selectedImage,
-                ]}
-                source={{uri: image}}
-                resizeMode="cover">
-                {
-                  //show view overlay if it's the last item
-                  imageListToDisplay.indexOf(image) ===
-                    imageListToDisplay.length - 1 && (
-                    <View style={styles.lastItemOverlay}>
-                      <Text style={styles.lastItemOverlayText}>
-                        {item.imageList.length - 4}+
-                      </Text>
-                    </View>
-                  )
-                }
-              </ImageBackground>
-            </TouchableOpacity>
-          ))}
-        </View>
+        {!showImage && (
+          <FlatList
+            style={styles.imageListContainer}
+            data={imageListToDisplay}
+            showsVerticalScrollIndicator={false}
+            keyExtractor={(item, index) => index.toString()}
+            renderItem={({item, index}) => (
+              <TouchableOpacity
+                activeOpacity={0.5}
+                key={index}
+                style={styles.imageListItem}
+                onPress={() => {
+                  setSelectedImageIndex(index);
+                  setSelectedImage(item);
+                }}>
+                <ImageBackground
+                  style={[
+                    styles.imageListItemBackground,
+                    selectedImageIndex === index && styles.selectedImage,
+                  ]}
+                  source={{uri: item}}
+                  resizeMode="cover"
+                />
+              </TouchableOpacity>
+            )}
+          />
+        )}
+        <Icon
+          name="image-search"
+          size={32}
+          style={styles.imageZoom}
+          onPress={() => {
+            showImage ? setShowImage(false) : setShowImage(true);
+          }}
+        />
       </ImageBackground>
-      <Icon
-        style={[globalStyles.globalText, styles.headerIcon]}
-        name="arrow-left"
-        size={24}
-        onPress={() => navigation.goBack()}
-      />
-      <Text style={[globalStyles.globalText, styles.title]}>{item.name}</Text>
+      {!showImage && (
+        <Icon
+          style={[globalStyles.globalText, styles.headerIcon]}
+          name="arrow-left"
+          size={24}
+          onPress={() => navigation.goBack()}
+        />
+      )}
+      <View style={styles.bottomView}>
+        <Text style={[globalStyles.globalText, styles.title]}>{item.name}</Text>
+      </View>
     </SafeAreaView>
   );
 };

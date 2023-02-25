@@ -2,16 +2,6 @@ import {Dimensions, StyleSheet} from 'react-native';
 import {Colors} from '../../Globals/Colors';
 
 export const styles = StyleSheet.create({
-  title: {
-    textAlignVertical: 'center',
-    textAlign: 'center',
-    color: Colors.textPrimaryDark,
-    fontSize: 20,
-    fontWeight: 'bold',
-    left: '4%',
-    alignSelf: 'flex-start',
-    top: Dimensions.get('window').height / 2,
-  },
   headerIcon: {
     color: Colors.textPrimaryLight,
     width: '14%',
@@ -24,8 +14,8 @@ export const styles = StyleSheet.create({
     top: '8%',
   },
   imageBackground: {
-    width: '100%',
-    height: Dimensions.get('window').height / 1.8,
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height / 2,
     position: 'absolute',
     top: 0,
   },
@@ -37,26 +27,20 @@ export const styles = StyleSheet.create({
   },
 
   imageListContainer: {
-    width: '90%',
-    height: '16%',
+    width: '20%',
+    height: '85%',
     position: 'absolute',
-    top: Dimensions.get('window').height / 2.4,
-    backgroundColor: Colors.backgroundGlassDark,
+    right: '2%',
+    top: '12%',
     borderRadius: 20,
-    alignSelf: 'center',
-    alignContent: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
-    paddingVertical: 4,
   },
 
   imageListItem: {
-    width: 70,
-    height: '100%',
+    width: '100%',
+    height: 70,
     borderRadius: 10,
-    alignContent: 'center',
-    justifyContent: 'center',
-    marginHorizontal: 2,
+    paddingVertical: 2,
+    elevation: 2,
   },
   imageListItemBackground: {
     width: '100%',
@@ -85,5 +69,30 @@ export const styles = StyleSheet.create({
   selectedImage: {
     borderWidth: 2,
     borderColor: Colors.backgroundAccent,
+  },
+  imageZoom: {
+    position: 'absolute',
+    top: Dimensions.get('window').height / 2.35,
+    left: '2%',
+    color: Colors.textPrimaryLight,
+    borderRadius: 40,
+    padding: 8,
+    elevation: 1,
+  },
+
+  bottomView: {
+    width: '100%',
+    height: '100%',
+    marginTop: Dimensions.get('window').height / 2.2,
+    position: 'relative',
+  },
+  title: {
+    textAlignVertical: 'center',
+    textAlign: 'center',
+    color: Colors.textPrimaryDark,
+    fontSize: 24,
+    fontWeight: 'bold',
+    left: '4%',
+    alignSelf: 'flex-start',
   },
 });

@@ -6,7 +6,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import AttractionDetailsScreen from './src/Screens/AttractionDetails';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from './src/Screens/Home';
-import GalleryScreen from './src/Screens/Gallery';
 
 const Stack = createStackNavigator();
 const App = () => {
@@ -34,7 +33,6 @@ const App = () => {
             },
           }}
         />
-        <Stack.Screen name="Gallery" component={GalleryScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
